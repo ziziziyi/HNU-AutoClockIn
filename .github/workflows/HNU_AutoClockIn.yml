@@ -34,4 +34,4 @@ jobs:
         RealAddress: ${{ secrets.REALADDRESS }}
         RealProvince_City_County: ${{ secrets.REALPROVINCE_CITY_COUNTY }}
       run:
-        python AutoClockIn.py $usr $pwd $sckey $RealAddress $RealProvince_City_County
+        python AutoClockIn.py $usr $pwd $RealAddress $RealProvince_City_County
