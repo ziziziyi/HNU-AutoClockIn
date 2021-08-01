@@ -88,7 +88,7 @@ def ClockIn():
         response = session.post("https://fangkong.hnu.edu.cn/api/v1/account/login", headers=headers_2, data=json.dumps(data))
         
         print(response.json())
-        InCampus = response.json()["data"]["IsShowBackCampus"]
+        InCampus = response.json()["data"]["BackState"]
 
         if response.json()["code"] != 0:
             print("验证码错误")
@@ -143,7 +143,7 @@ def ClockIn():
                 "tripinfolist": []
             }
 
-            if(InCampus): 
+            if(-0.01 < InCampus - 1 < 0.01): 
                 print('在校')
                 response = session.post("https://fangkong.hnu.edu.cn/api/v1/clockinlog/add", headers=headers_2, data=json.dumps(data2))
             else: 
