@@ -97,17 +97,39 @@ def ClockIn():
             # step 3: 模拟打卡操作
 
             data1 = { # 假期版本
+                # "Temperature":null,
                 "RealProvince":RealProvince,
                 "RealCity":RealCity,
                 "RealCounty":RealCounty,
                 "RealAddress":RealAddress,
                 "IsUnusual":"0",
+                "UnusualInfo":"",
                 "IsTouch":"0",
                 "IsInsulated":"0",
                 "IsSuspected":"0",
                 "IsDiagnosis":"0",
-                "IsInCampus":"0",
+                "tripinfolist":[
+                    {
+                        "aTripDate":"",
+                        "FromAdr":"",
+                        "ToAdr":"",
+                        "Number":"",
+                        "trippersoninfolist":[]
+                    }
+                ],
+                "toucherinfolist":[],
+                "dailyinfo":
+                    {
+                        "IsVia":"0",
+                        "DateTrip":""
+                    },"IsInCampus":"0",
+                "IsViaHuBei":"0",
+                "IsViaWuHan":"0",
+                "InsulatedAddress":"",
+                "TouchInfo":"",
                 "IsNormalTemperature":"1"
+                # "Longitude":null,
+                # "Latitude":null
             }
 
             data2 = { #上学期间版本
@@ -126,7 +148,7 @@ def ClockIn():
                 response = session.post("https://fangkong.hnu.edu.cn/api/v1/clockinlog/add", headers=headers_2, data=json.dumps(data2))
             else: 
                 print('离校')
-                response = session.post("https://fangkong.hnu.edu.cn/api/v1/clockinlog/add", headers=headers_1, data=json.dumps(data2))
+                response = session.post("https://fangkong.hnu.edu.cn/api/v1/clockinlog/add", headers=headers_2, data=json.dumps(data1))
 
             msg = response.json()["msg"]
             print(msg)
