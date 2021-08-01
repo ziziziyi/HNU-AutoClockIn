@@ -97,39 +97,17 @@ def ClockIn():
             # step 3: 模拟打卡操作
 
             data1 = { # 假期版本
-                # "Temperature":null,
                 "RealProvince":RealProvince,
                 "RealCity":RealCity,
                 "RealCounty":RealCounty,
                 "RealAddress":RealAddress,
                 "IsUnusual":"0",
-                "UnusualInfo":"",
                 "IsTouch":"0",
                 "IsInsulated":"0",
                 "IsSuspected":"0",
                 "IsDiagnosis":"0",
-                "tripinfolist":[
-                    {
-                        "aTripDate":"",
-                        "FromAdr":"",
-                        "ToAdr":"",
-                        "Number":"",
-                        "trippersoninfolist":[]
-                    }
-                ],
-                "toucherinfolist":[],
-                "dailyinfo":
-                    {
-                        "IsVia":"0",
-                        "DateTrip":""
-                    },"IsInCampus":"0",
-                "IsViaHuBei":"0",
-                "IsViaWuHan":"0",
-                "InsulatedAddress":"",
-                "TouchInfo":"",
+                "IsInCampus":"0",
                 "IsNormalTemperature":"1"
-                # "Longitude":null,
-                # "Latitude":null
             }
 
             data2 = { #上学期间版本
