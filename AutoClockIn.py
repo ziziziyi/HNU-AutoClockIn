@@ -86,7 +86,8 @@ def ClockIn():
 
         session = requests.Session()
         response = session.post("https://fangkong.hnu.edu.cn/api/v1/account/login", headers=headers_2, data=json.dumps(data))
-
+        
+        print(response.json())
         InCampus = response.json()["data"]["IsShowBackCampus"]
 
         if response.json()["code"] != 0:
